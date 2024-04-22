@@ -97,7 +97,7 @@ public class AuthenticationPage extends TestBase {
     }
 
     public AuthenticationPage checkSuccessRegistratiom() {
-        assertThat(allertSuccess.getText()).isEqualTo("Регистрация прошла успешно, проверьте свою электронную почту, подтвердите отправку письма");
+        assertThat(allertSuccess.getText()).isEqualTo("Registration successful, check your email, confirmation letter has been sent");
         return this;
     }
 
