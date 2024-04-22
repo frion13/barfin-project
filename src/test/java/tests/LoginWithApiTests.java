@@ -3,6 +3,7 @@ package tests;
 import api.endpoints.SignIn;
 import api.models.CookiesModel;
 
+import api.models.ErrorResponseModel;
 import com.github.javafaker.Faker;
 import config.AuthConfig;
 import org.aeonbits.owner.ConfigFactory;
@@ -35,7 +36,7 @@ public class LoginWithApiTests extends TestBase {
     @Test
     @DisplayName("Тестирование Входа с Неверным Паролем")
     void authWithWrongPasswordApiTest() {
-        CookiesModel response = step("Отправить запрос на авторизацию с логином и паролем", () ->
+        ErrorResponseModel response = step("Отправить запрос на авторизацию с логином и паролем", () ->
                 signIn.loginWithError(config.email(), invalodPassword)
         );
         step("Проверить, что ответе пришел StatusCode 409", () ->
@@ -43,13 +44,13 @@ public class LoginWithApiTests extends TestBase {
         step("Проверить, что ответе пришла ошибка Conflict", () ->
                 assertThat(response.getError()).isEqualTo("Conflict"));
         step("Проверить, что ответе пришло сообщение Invalid credentials", () ->
-                assertThat(response.getMessage()).isEqualTo("Invalid credentials"));
+                assertThat(response.getMessage()).contains("Invalid credentials"));
     }
 
     @Test
     @DisplayName("Тестирование Входа с Неверным логином")
     void authWithWrongEmailApiTest() {
-        CookiesModel response = step("Отправить запрос на авторизацию с логином и паролем", () ->
+        ErrorResponseModel response = step("Отправить запрос на авторизацию с логином и паролем", () ->
                 signIn.loginWithError(invalidEmail, config.password())
         );
         step("Проверить, что ответе пришел StatusCode 409", () ->
@@ -57,9 +58,8 @@ public class LoginWithApiTests extends TestBase {
         step("Проверить, что ответе пришла ошибка Conflict", () ->
                 assertThat(response.getError()).isEqualTo("Conflict"));
         step("Проверить, что ответе пришло сообщение Email or password is incorrect", () ->
-                assertThat(response.getMessage()).isEqualTo("Email or password is incorrect"));
+                assertThat(response.getMessage()).contains("Email or password is incorrect"));
     }
-
 
 
 

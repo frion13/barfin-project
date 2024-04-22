@@ -11,7 +11,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class AuthenticationPage extends TestBase {
 
-    String studioLogin = "https://studio.barfin.network";
+    String studioLogin = "https://studio.barfin.network/ru/auth/login";
     String studioRegister = "https://studio.barfin.network/auth/register";
 
     private SelenideElement loginLink = $("#barfin_buttonlink_studio"),
@@ -22,9 +22,11 @@ public class AuthenticationPage extends TestBase {
             passworConfirmRegistrationdInput = $("#password2"),
             registrationLink = $("#barfin-link-register"),
             registrationButton = $("#barfin-button-register"),
-            allertRegistration = $("#barfin-alert-text-register-ok"),
-            alert = $(".alert"),
-            errorHint = $(".error-hint");
+            allertSuccess = $(".alert-success"),
+            alertError = $(".alert-error"),
+            errorHint = $(".error-hint"),
+            forgotPasswordLink = $("#barfin-link-forgot-password"),
+            submitEmailButton = $("#barfin-button-submit-email");
 
 
     public AuthenticationPage openPage() {
@@ -70,6 +72,24 @@ public class AuthenticationPage extends TestBase {
     }
 
 
+    public AuthenticationPage forgotPasswordClick() {
+        forgotPasswordLink.shouldBe(visible);
+        forgotPasswordLink.click();
+        return this;
+    }
+
+    public AuthenticationPage setEmail(String email) {
+        submitEmailButton.shouldBe(visible);
+        emailInput.setValue(email).pressEnter();
+        return this;
+    }
+
+    public AuthenticationPage checkSuccessAlert() {
+        assertThat(allertSuccess.getText()).isEqualTo("An email has been sent to the user with the reset password link");
+        return this;
+    }
+
+
     public AuthenticationPage checkSuccessLogin(String email) {
         profileButton.shouldBe(visible);
         assertThat(profileButton.getText()).isEqualTo(email);
@@ -77,13 +97,13 @@ public class AuthenticationPage extends TestBase {
     }
 
     public AuthenticationPage checkSuccessRegistratiom() {
-        assertThat(allertRegistration.getText()).isEqualTo("Регистрация прошла успешно, проверьте свою электронную почту, подтвердите отправку письма");
+        assertThat(allertSuccess.getText()).isEqualTo("Регистрация прошла успешно, проверьте свою электронную почту, подтвердите отправку письма");
         return this;
     }
 
     public AuthenticationPage checkAlert(String alertText) {
-        alert.shouldBe(visible);
-        assertThat(alert.getText()).isEqualTo(alertText);
+        alertError.shouldBe(visible);
+        assertThat(alertError.getText()).isEqualTo(alertText);
         return this;
     }
 
@@ -91,4 +111,6 @@ public class AuthenticationPage extends TestBase {
         errorHint.shouldBe(visible);
         return this;
     }
+
+
 }

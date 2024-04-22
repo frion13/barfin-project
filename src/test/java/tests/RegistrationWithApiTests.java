@@ -2,12 +2,12 @@ package tests;
 
 import api.endpoints.Signup;
 import api.extentions.WithDeleteUser;
+import api.models.ErrorResponseModel;
 import api.models.RegistrationResponseModel;
 import com.github.javafaker.Faker;
 import config.AuthConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.*;
-import pages.AuthenticationPage;
 
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,13 +37,13 @@ public class RegistrationWithApiTests extends TestBase {
     @Test
     @DisplayName("Регистрация с некорректным подтверждением паролем")
     void registrationWithWrongConfitmPasswordApiTest() {
-        RegistrationResponseModel response = step("Отправить запрос на регистрацию с верными логином и паролем, и неверным повторным паролем", () ->
+        ErrorResponseModel response = step("Отправить запрос на регистрацию с верными логином и паролем, и неверным повторным паролем", () ->
                 signup.registrationWithWrongData(config.registrationEmail(), config.password(), invalodPassword)
         );
         step("Проверить статускод", () ->
                 assertThat(response.getStatusCode()).isEqualTo(400));
         step("Проверить, что ответе сообщение Passwords do not match", () ->
-                assertThat(response.getMessage()).isEqualTo("Passwords do not match"));
+                assertThat(response.getMessage()).contains("Passwords do not match"));
         step("Проверить, что пришла ошибка Bad Request", () ->
                 assertThat(response.getError()).isEqualTo("Bad Request"));
 
@@ -52,13 +52,13 @@ public class RegistrationWithApiTests extends TestBase {
     @Test
     @DisplayName("Регистрация с некорректным подтверждением паролем")
     void registrationWithWrongFormatEmailApiTest() {
-        RegistrationResponseModel response = step("Отправить запрос на регистрацию email с неправильным форматом и верными паролями", () ->
+        ErrorResponseModel response = step("Отправить запрос на регистрацию email с неправильным форматом и верными паролями", () ->
                 signup.registrationWithWrongData(invalidEmail, config.password(), config.password())
         );
         step("Проверить статускод 400", () ->
                 assertThat(response.getStatusCode()).isEqualTo(400));
         step("Проверить, что ответе сообщение email must be an email", () ->
-                assertThat(response.getMessage()).isEqualTo("email must be an email"));
+                assertThat(response.getMessage()).contains("email must be an email"));
         step("Проверить, что пришла ошибка Bad Request", () ->
                 assertThat(response.getError()).isEqualTo("Bad Request"));
 

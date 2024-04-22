@@ -8,18 +8,19 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 
 public class SignIn {
 
-    private final String endpoint = "/auth/sign-in";
+    private static final String ENDPOINT = "/auth/sign-in";
 
-    private CookiesModel signIn(LoginModel login, String schemaPath) {
+    private <T> T signIn(LoginModel login, String schemaPath, Class<T> responseType) {
         return given(requestSpec)
                 .body(login)
                 .when()
-                .post(endpoint)
+                .post(ENDPOINT)
                 .then()
                 .spec(responseSpec)
                 .body(matchesJsonSchemaInClasspath(schemaPath))
-                .extract().as(CookiesModel.class);
+                .extract().as(responseType);
     }
+
 
     private LoginModel createLoginModel(String email, String password) {
         LoginModel login = new LoginModel();
@@ -30,12 +31,10 @@ public class SignIn {
 
 
     public CookiesModel successLogin(String email, String password) {
-        LoginModel login = createLoginModel(email, password);
-        return signIn(login, "schemas/barfin-signin-schema.json");
+        return signIn(createLoginModel(email, password), "schemas/barfin-signin-schema.json", CookiesModel.class);
     }
 
-    public CookiesModel loginWithError(String email, String password) {
-        LoginModel login = createLoginModel(email, password);
-        return signIn(login, "schemas/barfin-signin-error-schema.json");
+    public ErrorResponseModel loginWithError(String email, String password) {
+        return signIn(createLoginModel(email, password), "schemas/barfin-error-schema.json", ErrorResponseModel.class);
     }
 }

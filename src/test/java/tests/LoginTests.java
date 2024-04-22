@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
 import com.github.javafaker.Faker;
 import config.AuthConfig;
 import org.aeonbits.owner.ConfigFactory;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.AuthenticationPage;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -72,22 +74,35 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Тестирование Входа с пустыми полями ввода")
+    @DisplayName("Восстановление пароля с зарегистрированного пользователя")
     void forgotPasswordForRegisteredUserTest() {
         step("Перейти на страницу студии", () ->
                 authPage.openStudio());
-        $("#barfin-link-forgot-password").click();
-        $("#email").setValue("testcartis@gmail.com");
-
-
-
-
-
-//        step("Ввести неверный логин пользователя и верный пароль", () ->
-//                authPage.setLoginAndPassword("", ""));
-//        step("Система выдает ошибку Необходимо заполнить все поля", () ->
-//                authPage.checkerrorHint());
+        step("Нажать на кнопку восстановления пароля", () ->
+                authPage.forgotPasswordClick());
+        step("Ввести емаил зарегистрированного пользователя", () ->
+                authPage.setEmail(auth.email()));
+        step("Проверить алерт об успешном отправлении емэила на почту", () ->
+                authPage.checkSuccessAlert());
     }
+
+    @Test
+    @DisplayName("Восстановление пароля для незарегистрированного пользователя")
+    void forgotPasswordForNotRegisteredUserTest() {
+        step("Перейти на страницу студии", () ->
+                authPage.openStudio());
+        step("Нажать на кнопку восстановления пароля", () ->
+                authPage.forgotPasswordClick());
+        step("Ввести емаил незарегистрированного пользователя", () ->
+                authPage.setEmail(auth.registrationEmail()));
+        step("Проверить алерт об ошибке", () ->
+                authPage.checkAlert("There is no such user registered in the system"));
+    }
+
+
+
+
+
 
 
 
