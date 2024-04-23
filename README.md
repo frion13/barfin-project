@@ -179,8 +179,11 @@ password=password
 <img width="1406" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/902e687b-54b4-437f-8567-fb369ad92e3b">
 
 ## <a id="отчет-в-telegram">Отчет в Telegram</a>
-после прохождения тестов бот отправляет в телеграм сообщение о прохождении тестов
-![IMG_6094](https://github.com/frion13/barfin-project/assets/112623336/70a37577-e381-4fb9-b1ff-bc6e6151c1ac width="50" height="50")
+После прохождения тестов бот отправляет в Telegram сообщение о прохождении тестов. Ниже представлен пример уведомления:
+
+<img src="https://github.com/frion13/barfin-project/assets/112623336/70a37577-e381-4fb9-b1ff-bc6e6151c1ac" width="250">
+
+
 
 
 
