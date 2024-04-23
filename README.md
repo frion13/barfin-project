@@ -15,59 +15,50 @@
 - [Видео примеры прохождения тестов](#видео-примеры-прохождения-тестов)
 
 
-## Технологический стек
+## Технологический стек(#технологический-стек)
 
 
 ➠ Технологический стек
 
 <p align="center">
-  <!-- IntelliJ IDEA -->
   <a href="https://www.jetbrains.com/idea/">
     <img src="img/logo/Idea.svg" width="50" height="50" alt="IntelliJ IDEA"/>
   </a>
-  <!-- Java -->
   <a href="https://www.oracle.com/java/">
-    <img src="images/logo/Java.svg" width="50" height="50" alt="Java"/>
+    <img src="img/logo/Java.svg" width="50" height="50" alt="Java"/>
   </a>
-  <!-- Selenide -->
   <a href="https://selenide.org/">
-    <img src="images/logo/Selenide.svg" width="50" height="50" alt="Selenide"/>
+    <img src="img/logo/Selenide.svg" width="50" height="50" alt="Selenide"/>
   </a>
-  <!-- GitHub -->
-  <a href="https://github.com/">
-    <img src="images/logo/GitHub.svg" width="50" height="50" alt="GitHub"/>
+   <a href="https://junit.org/junit5/">
+    <img src="img/logo/JUnit5.svg" width="50" height="50" alt="JUnit 5"/>
   </a>
-  <!-- JUnit 5 -->
-  <a href="https://junit.org/junit5/">
-    <img src="images/logo/JUnit5.svg" width="50" height="50" alt="JUnit 5"/>
-  </a>
-  <!-- Gradle -->
-  <a href="https://gradle.org/">
-    <img src="images/logo/Gradle.svg" width="50" height="50" alt="Gradle"/>
-  </a>
-  <!-- Selenoid -->
-  <a href="https://aerokube.com/selenoid/">
-    <img src="images/logo/Selenoid.svg" width="50" height="50" alt="Selenoid"/>
-  </a>
-  <!-- Allure -->
   <a href="https://qameta.io/">
-    <img src="images/logo/Allure.svg" width="50" height="50" alt="Allure"/>
+    <img src="img/logo/Allure.svg" width="50" height="50" alt="Allure"/>
   </a>
-  <!-- Jenkins -->
+  <a href="https://github.com/">
+    <img src="img/logo/GitHub.svg" width="50" height="50" alt="GitHub"/>
+  </a>
+  <a href="https://gradle.org/">
+    <img src="img/logo/Gradle.svg" width="50" height="50" alt="Gradle"/>
+  </a>
+  <a href="https://aerokube.com/selenoid/">
+    <img src="img/logo/Selenoid.svg" width="50" height="50" alt="Selenoid"/>
+  </a>
   <a href="https://www.jenkins.io/">
-    <img src="images/logo/Jenkins.svg" width="50" height="50" alt="Jenkins"/>
+    <img src="img/logo/Jenkins.svg" width="50" height="50" alt="Jenkins"/>
   </a>
-  <!-- Allure TestOps -->
   <a href="https://qameta.io/testops">
-    <img src="images/logo/AllureTestOps.svg" width="50" height="50" alt="Allure TestOps"/>
+    <img src="img/logo/AllureTestOps.svg" width="50" height="50" alt="Allure TestOps"/>
   </a>
-  <!-- Jira -->
   <a href="https://www.atlassian.com/software/jira">
-    <img src="images/logo/Jira.svg" width="50" height="50" alt="Jira"/>
+    <img src="img/logo/Jira.svg" width="50" height="50" alt="Jira"/>
   </a>
-  <!-- RestAssured -->
   <a href="https://rest-assured.io/">
-    <img src="images/logo/RestAssured.svg" width="50" height="50" alt="RestAssured"/>
+    <img src="img/logo/RestAssured.svg" width="50" height="50" alt="Telegram"/>
+  </a>
+   <a href="https://web.telegram.org">
+    <img src="img/logo/telegram.svg" width="50" height="50" alt="RestAssured"/>
   </a>
 </p>
 
