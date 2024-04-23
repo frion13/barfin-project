@@ -185,9 +185,9 @@ password=password
 
 
 
-
-
 ## <a id="видео-примеры-прохождения-тестов">Видео примеры прохождения тестов</a>
+<a target="_blank" href="https://selenoid.autotests.cloud/video/e3ee010961181e0150d1a54626d6e0b75.mp4">прохождения тестов </a>
+
 https://jenkins.autotests.cloud/job/24-lomanovskaya_diplomaProject/allure/data/attachments/2eea828b353f6435.html
 
 
