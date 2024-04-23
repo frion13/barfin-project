@@ -20,18 +20,55 @@
 
 ➠ Технологический стек
 
-| IntelliJ IDEA | <img src="https://resources.jetbrains.com/storage/products/intellij-idea/img/meta/intellij-idea_logo_300x300.png" width="40"> |
-| Java          | <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" width="40"> |
-| Selenide      | <img src="https://avatars.githubusercontent.com/u/24496877?s=400&v=4" width="40"> |
-| GitHub        | <img src="https://image.flaticon.com/icons/png/512/25/25231.png" width="40"> |
-| JUnit 5       | <img src="https://junit.org/junit5/assets/img/junit5-logo.png" width="40"> |
-| Gradle        | <img src="https://cdn-icons-png.flaticon.com/512/919/919837.png" width="40"> |
-| Selenoid      | <img src="https://aerokube.com/images/selenoid-logo.png" width="40"> |
-| Allure        | <img src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" width="40"> |
-| Jenkins       | <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/jenkins_logo_icon_168717.png" width="40"> |
-| Allure TestOps| <img src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" width="40"> | <!-- Assuming same as Allure -->
-| Jira          | <img src="https://cdn.worldvectorlogo.com/logos/jira-1.svg" width="40"> |
+<p align="center">
+  <!-- IntelliJ IDEA -->
+  <a href="https://www.jetbrains.com/idea/">
+    <img src="images/logo/Idea.svg" width="50" height="50" alt="IntelliJ IDEA"/>
+  </a>
+  <!-- Java -->
+  <a href="https://www.oracle.com/java/">
+    <img src="images/logo/Java.svg" width="50" height="50" alt="Java"/>
+  </a>
+  <!-- Selenide -->
+  <a href="https://selenide.org/">
+    <img src="images/logo/Selenide.svg" width="50" height="50" alt="Selenide"/>
+  </a>
+  <!-- GitHub -->
+  <a href="https://github.com/">
+    <img src="images/logo/GitHub.svg" width="50" height="50" alt="GitHub"/>
+  </a>
+  <!-- JUnit 5 -->
+  <a href="https://junit.org/junit5/">
+    <img src="images/logo/JUnit5.svg" width="50" height="50" alt="JUnit 5"/>
+  </a>
+  <!-- Gradle -->
+  <a href="https://gradle.org/">
+    <img src="images/logo/Gradle.svg" width="50" height="50" alt="Gradle"/>
+  </a>
+  <!-- Selenoid -->
+  <a href="https://aerokube.com/selenoid/">
+    <img src="images/logo/Selenoid.svg" width="50" height="50" alt="Selenoid"/>
+  </a>
+  <!-- Allure -->
+  <a href="https://qameta.io/">
+    <img src="images/logo/Allure.svg" width="50" height="50" alt="Allure"/>
+  </a>
+  <!-- Jenkins -->
+  <a href="https://www.jenkins.io/">
+    <img src="images/logo/Jenkins.svg" width="50" height="50" alt="Jenkins"/>
+  </a>
+  <!-- Allure TestOps -->
+  <a href="https://qameta.io/testops">
+    <img src="images/logo/AllureTestOps.svg" width="50" height="50" alt="Allure TestOps"/>
+  </a>
+  <!-- Jira -->
+  <a href="https://www.atlassian.com/software/jira">
+    <img src="images/logo/Jira.svg" width="50" height="50" alt="Jira"/>
+  </a>
+  <!-- RestAssured -->
+  <a href="https://rest-assured.io/">
+    <img src="images/logo/RestAssured.svg" width="50" height="50" alt="RestAssured"/>
+  </a>
+</p>
 
-
-IDEA Java Selenide Github JUnit 5 Gradle Selenoid Allure Jenkins Allure TestOps  Jira
 
