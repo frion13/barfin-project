@@ -49,7 +49,7 @@
     <img src="img/logo/jenkins.svg" width="50" height="50" alt="Jenkins"/>
   </a>
   <a href="https://qameta.io/testops">
-    <img src="img/logo/allurero.svg" width="50" height="50" alt="Allure TestOps"/>
+    <img src="img/logo/allureto.svg" width="50" height="50" alt="Allure TestOps"/>
   </a>
   <a href="https://www.atlassian.com/software/jira">
     <img src="img/logo/jira.svg" width="50" height="50" alt="Jira"/>
@@ -61,12 +61,12 @@
     <img src="img/logo/telegram.svg" width="50" height="50" alt="RestAssured"/>
   </a>
 </p>
-<p>
+
 В  проекте используется комплексный подход к автоматизации тестирования веб-приложений. UI автотесты реализованы на ***Java*** с использованием фреймворка ***Selenide***. Применяются паттерны ***PageObject*** и ***Lambda Steps*** для организации код.
 Для API автотесты реализованы на ***RestAssured***. Хранение свойств организовано с помощью библиотеки ***Owner*** 
 Для запуска тестов в изолированной среде используется ***Selenoid***, который работает в контейнерах Docker. Отчеты о выполнении тестов формируются с помощью ***Allure Report*** и ***Allure TestOps***. Тесты прикреплены к таске в ***jira***.
 Сборка проекта происходит через ***Gradle***, а за запуск тестов и управление сборками отвечает ***Jenkins***. По окончании тестирования результаты отправляются через ***Telegram*** бот в чат.
-</p>
+
 
 
 ## <a id="покрытый-функционал">Покрытый функционал</a>
