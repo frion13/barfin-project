@@ -23,7 +23,7 @@
 <p align="center">
   <!-- IntelliJ IDEA -->
   <a href="https://www.jetbrains.com/idea/">
-    <img src="images/logo/Idea.svg" width="50" height="50" alt="IntelliJ IDEA"/>
+    <img src="img/logo/Idea.svg" width="50" height="50" alt="IntelliJ IDEA"/>
   </a>
   <!-- Java -->
   <a href="https://www.oracle.com/java/">
