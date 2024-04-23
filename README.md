@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://barfin.network/ru">
-    <img src="img/logo/barfin.svg" width="50" height="50" alt="IntelliJ IDEA"/>
+    <img src="img/logo/barfin.png" width="50" height="50" alt="IntelliJ IDEA"/>
   </a>
 </p>
 
