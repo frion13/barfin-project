@@ -128,7 +128,7 @@
 
 <img width="1424" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/c5f7339f-bbd7-4b8a-8441-a196b9b2507a">
 
-## <a id="запуск-из-терминала">Запуск из терминала</a>
+## <a id="примеры-использования">Примеры использования</a>
 
 Для запуска тестов из терминала используется команда
 ```gradle clean test```
@@ -149,15 +149,43 @@ email=tser@email.ru
 password=password
 ```
 
-## <a id="примеры-использования">Примеры использования</a>
+Сгенерировать отчет:
 
-## <a id="тallure-отче">Allure отчет</a>
+```allure serve build/allure-results```
+
+
+## <a id="allure-отчет">Allure отчет</a>
+
+Чтобы посмотреть отчет Allure после выполнения тестов, необходимо открыть его через вкладку `Overview`, где находится статистика тестирования.
+
+![Allure Overview](https://github.com/frion13/barfin-project/assets/112623336/466dd956-eed5-41ac-bc0d-b39d86f56a26)
+
+### Тесткейсы в Allure
+
+Для детального просмотра результатов тестов нужно перейти на вкладку `Suits`.
+
+![Allure Suits](https://github.com/frion13/barfin-project/assets/112623336/96d2de3f-c0c3-4ba0-959f-9083fe5776f3)
+
+### Отчет в Allure TestOps
+
+<img width="1386" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/c058196a-7e23-475d-9ad2-e3ae8e8c998a">
+
+### Тесткейсы в Allure TestOps
+
+<img width="1435" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/f1444e48-fa60-4d93-b0cb-2c8ff39b7e8b">
+
 
 ## <a id="интеграция-с-jira">Интеграция с Jira</a>
+<img width="1406" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/902e687b-54b4-437f-8567-fb369ad92e3b">
 
 ## <a id="отчет-в-telegram">Отчет в Telegram</a>
+после прохождения тестов бот отправляет в телеграм сообщение о прохождении тестов
+![IMG_6094](https://github.com/frion13/barfin-project/assets/112623336/70a37577-e381-4fb9-b1ff-bc6e6151c1ac)
+
+
 
 ## <a id="видео-примеры-прохождения-тестов">Видео примеры прохождения тестов</a>
+https://jenkins.autotests.cloud/job/24-lomanovskaya_diplomaProject/allure/data/attachments/2eea828b353f6435.html
 
 
 
