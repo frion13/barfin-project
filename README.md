@@ -136,7 +136,9 @@
 Необходимо создать файл auth.properties в папке src/test/resources/config/ и передать туда значения свойств
 ```registration-email=user@email.ru    //Емаил незарегистрированного пользователя
 email=tser@email.ru            //Емаил зарегистрированного пользователя
-password=password```       //Пароль
+password=password       //Пароль
+
+```
 
 ## <a id="примеры-использования">Примеры использования</a>
 
