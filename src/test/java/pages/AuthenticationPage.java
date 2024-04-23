@@ -14,7 +14,7 @@ public class AuthenticationPage extends TestBase {
     String studioLogin = "https://studio.barfin.network/ru/auth/login";
     String studioRegister = "https://studio.barfin.network/auth/register";
 
-    private SelenideElement loginLink = $("#barfin_buttonlink_studio"),
+    private static SelenideElement loginLink = $("#barfin_buttonlink_studio"),
             emailInput = $("#email"),
             passwordInput = $("#password"),
             profileButton = $("#barfin-menubutton-div-user div"),

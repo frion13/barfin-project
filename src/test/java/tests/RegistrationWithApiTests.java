@@ -6,6 +6,7 @@ import api.models.ErrorResponseModel;
 import api.models.RegistrationResponseModel;
 import com.github.javafaker.Faker;
 import config.AuthConfig;
+import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.*;
 
@@ -13,6 +14,7 @@ import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
+@Feature("Registration")
 public class RegistrationWithApiTests extends TestBase {
     Signup signup = new Signup();
 

@@ -3,6 +3,7 @@ package tests;
 import api.extentions.WithDeleteUser;
 import com.github.javafaker.Faker;
 import config.AuthConfig;
+import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,6 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
+@Feature("Registration")
 public class RegistrationTests extends TestBase {
     Faker faker = new Faker();
     String invalidEmail = faker.internet().domainWord() + "@" + faker.internet().domainWord();
