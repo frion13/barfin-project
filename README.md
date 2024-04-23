@@ -1,1 +1,1 @@
-# barfin-project
+# Демо проект по автоматизации Barfin Network
