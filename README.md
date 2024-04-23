@@ -180,7 +180,7 @@ password=password
 
 ## <a id="отчет-в-telegram">Отчет в Telegram</a>
 после прохождения тестов бот отправляет в телеграм сообщение о прохождении тестов
-![IMG_6094](https://github.com/frion13/barfin-project/assets/112623336/70a37577-e381-4fb9-b1ff-bc6e6151c1ac)
+![IMG_6094](https://github.com/frion13/barfin-project/assets/112623336/70a37577-e381-4fb9-b1ff-bc6e6151c1ac width="50" height="50")
 
 
 
