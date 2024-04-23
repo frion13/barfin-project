@@ -3,7 +3,6 @@ package tests;
 import com.codeborne.selenide.Condition;
 import com.github.javafaker.Faker;
 import config.AuthConfig;
-import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -15,7 +14,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-@Feature("Login")
 public class LoginTests extends TestBase {
     Faker faker = new Faker();
     String wrongEmail = faker.internet().emailAddress();

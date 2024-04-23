@@ -6,7 +6,6 @@ import api.models.CookiesModel;
 import api.models.ErrorResponseModel;
 import com.github.javafaker.Faker;
 import config.AuthConfig;
-import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,6 @@ import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-@Feature("Login")
 public class LoginWithApiTests extends TestBase {
     SignIn signIn = new SignIn();
 
