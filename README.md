@@ -178,7 +178,7 @@ password=password
 ## <a id="интеграция-с-jira">Интеграция с Jira</a>
 <img width="1406" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/902e687b-54b4-437f-8567-fb369ad92e3b">
 
-## <img src="img/logo/telegram.svg" width="15" height="15"/><a id="отчет-в-telegram">Отчет в Telegram</a>
+## <img src="img/logo/telegram.svg" width="30" height="30"/><a id="отчет-в-telegram">Отчет в Telegram</a>
 После прохождения тестов бот отправляет в Telegram сообщение о прохождении тестов. Ниже представлен пример уведомления:
 
 <img src="https://github.com/frion13/barfin-project/assets/112623336/70a37577-e381-4fb9-b1ff-bc6e6151c1ac" width="250">
