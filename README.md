@@ -185,13 +185,16 @@ password=password
 
 
 
-## <a id="видео-примеры-прохождения-тестов">Видео примеры прохождения тестов</a>
+## <a id="видео-примеры-прохождения-тестов">Видео примеры прохождения тестов в Selenoid</a>
 
 Для наглядности результатов тестирования представлены видеозаписи:
 
 [Смотреть видео прохождения теста](https://selenoid.autotests.cloud/video/3ee010961181e0150d1a54626d6e0b75.mp4)
 
-![Пример запуска локально](img/gif/example.gif "Local launch example")
+### <img src="images/logo/Selenoid.svg" width="25" height="25" alt="Jenkins"/></a> Видео <a target="_blank" href="https://selenoid.autotests.cloud/video/ef6f0961cd61bebe69b39d6591b8a072.mp4">прохождения тестов </a>
+<p align="center">
+<img title="Local launch example" src="img/gif/example.gif">
+</p>
 
 
 
