@@ -186,8 +186,13 @@ password=password
 
 
 ## <a id="видео-примеры-прохождения-тестов">Видео примеры прохождения тестов</a>
-[Видео прохождения теста](https://selenoid.autotests.cloud/video/3ee010961181e0150d1a54626d6e0b75.mp4)
-<img title="Local launch example" src="img/gif/example.gif">
+
+Для наглядности результатов тестирования представлены видеозаписи:
+
+[Смотреть видео прохождения теста](https://selenoid.autotests.cloud/video/3ee010961181e0150d1a54626d6e0b75.mp4)
+
+![Пример запуска локально](img/gif/example.gif "Local launch example")
+
 
 
 
