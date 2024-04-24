@@ -50,7 +50,7 @@ public class RegistrationWithApiTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Регистрация с некорректным подтверждением паролем")
+    @DisplayName("Регистрация с некорректным форматом email")
     void registrationWithWrongFormatEmailApiTest() {
         ErrorResponseModel response = step("Отправить запрос на регистрацию email с неправильным форматом и верными паролями", () ->
                 signup.registrationWithWrongData(invalidEmail, config.password(), config.password())
