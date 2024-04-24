@@ -192,7 +192,7 @@ password=password
 [Смотреть видео прохождения теста](https://selenoid.autotests.cloud/video/3ee010961181e0150d1a54626d6e0b75.mp4)
 
 <p>
-<img title="Local launch example" src="img/gif/example.gif" width="100" height="100" alt="IntelliJ IDEA">
+<img title="Local launch example" src="img/gif/examle.gif">
 </p>
 
 
