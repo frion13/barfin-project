@@ -125,6 +125,7 @@ password=password
 Чтобы посмотреть отчет Allure после выполнения тестов, необходимо открыть его через вкладку `Overview`, где находится статистика тестирования.
 
 ![Allure Overview](https://github.com/frion13/barfin-project/assets/112623336/466dd956-eed5-41ac-bc0d-b39d86f56a26)
+[Смотреть отчет](https://jenkins.autotests.cloud/job/24-lomanovskaya_diplomaProject/19/allure/#)
 
 ### Тесткейсы в Allure
 
@@ -136,7 +137,7 @@ password=password
 ### Отчет в Allure TestOps
 
 <img width="1386" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/c058196a-7e23-475d-9ad2-e3ae8e8c998a">
-[Смотреть отчет](https://jenkins.autotests.cloud/job/24-lomanovskaya_diplomaProject/19/allure/#)
+
 
 ### Тесткейсы в Allure TestOps
 
