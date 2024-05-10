@@ -4,25 +4,21 @@ package api.extentions;
 import api.models.CookiesModel;
 import api.models.LoginModel;
 
-import static api.spec.AuthSpec.requestSpec;
-import static api.spec.AuthSpec.responseSpec;
-
 import config.AuthConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
-import tests.TestBase;
 
+import static api.spec.AuthSpec.*;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.basePath;
 import static io.restassured.RestAssured.given;
 
 import org.openqa.selenium.Cookie;
 
-public class LoginExtention extends TestBase implements BeforeEachCallback {
+public class LoginExtension implements BeforeEachCallback {
     AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
 
     @Override
@@ -36,7 +32,7 @@ public class LoginExtention extends TestBase implements BeforeEachCallback {
                 .when()
                 .post()
                 .then()
-                .spec(responseSpec)
+                .spec(loggingOnlySpec)
                 .extract().
                 as(CookiesModel.class);
         String token = String.format("{\"token\":\"%s\",\"permissions\":[\"detector_owner\"]}", cookie.getAccessToken());

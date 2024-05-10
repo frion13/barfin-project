@@ -1,39 +1,52 @@
 package api.endpoints;
 
-import api.models.*;
+import io.restassured.response.ValidatableResponse;
 
 import static api.spec.AuthSpec.*;
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class Signup {
+    private String email;
+    private String password;
+    private String confirmPassword;
     private static final String ENDPOINT = "/auth/sign-up";
 
-    private <T> T signUp(RegistrationModel registration, String schemaPath, Class<T> responseType) {
+    public Signup(String email, String password, String confirmPassword) {
+        this.email = email;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public ValidatableResponse signUp(Signup signup) {
         return given(requestSpec)
-                .body(registration)
+                .body(signup)
                 .when()
                 .post(ENDPOINT)
                 .then()
-                .spec(responseSpec)
-                .body(matchesJsonSchemaInClasspath(schemaPath))
-                .extract().as(responseType);
-    }
-
-    private RegistrationModel createRegistrationModel(String email, String password, String confirmPassword) {
-        RegistrationModel registration = new RegistrationModel();
-        registration.setEmail(email);
-        registration.setPassword(password);
-        registration.setConfirmPassword(confirmPassword);
-        return registration;
-    }
-
-    public RegistrationResponseModel successRegistration(String email, String password, String confirmPassword) {
-        return signUp(createRegistrationModel(email, password, confirmPassword), "schemas/barfin-signup-schema.json",
-                RegistrationResponseModel.class);
-    }
-
-    public ErrorResponseModel registrationWithWrongData(String email, String password, String confirmPassword) {
-        return signUp(createRegistrationModel(email, password, confirmPassword), "schemas/barfin-error-schema.json", ErrorResponseModel.class);
+                .spec(loggingOnlySpec);
     }
 }

@@ -11,7 +11,6 @@ import static io.restassured.filter.log.LogDetail.STATUS;
 import static io.restassured.http.ContentType.JSON;
 
 
-
 public class AuthSpec {
     public static RequestSpecification requestSpec = with()
             .filter(withCustomTemplates())
@@ -22,15 +21,10 @@ public class AuthSpec {
             .contentType(JSON);
 
 
-    public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification loggingOnlySpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .build();
 
-
-    public static ResponseSpecification responseWithErrorSpec = new ResponseSpecBuilder()
-            .log(STATUS)
-            .log(BODY)
-            .build();
 
 }

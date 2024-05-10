@@ -25,6 +25,4 @@ public interface DriverConfig extends Config {
     String browserRemoteUrl();
 
 
-
-
 }

@@ -17,7 +17,4 @@ public interface AuthConfig extends Config {
     String registrationEmail();
 
 
-
-
-
 }

@@ -1,76 +1,59 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
-import com.github.javafaker.Faker;
-import config.AuthConfig;
-import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.AuthenticationPage;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class LoginTests extends TestBase {
-    Faker faker = new Faker();
-    String wrongEmail = faker.internet().emailAddress();
-    String wrongPassword = faker.internet().password();
-    AuthenticationPage authPage = new AuthenticationPage();
-    AuthConfig auth = ConfigFactory.create(AuthConfig.class, System.getProperties());
-
-
-
     @Test
-    @DisplayName("Тестирование Валидного Входа")
-    void successLoginTest() {
+    @DisplayName("Тестирование валидного входа")
+    void SuccessLoginTest() {
         step("Открыть страницу", () ->
                 authPage.openPage());
         step("Перейти на страницу входа.", () ->
                 authPage.openLoginPage());
         step("Ввести верные логин пользователя и пароль", () ->
-                authPage.setLoginAndPassword(auth.email(), auth.password())
+                authPage.setLoginAndPassword(config.email(), config.password())
         );
         step("Проверить, что в профиле пользователя отображается введенный при входе email", () ->
-                authPage.checkSuccessLogin(auth.email()));
+                authPage.checkSuccessLogin(config.email()));
 
     }
 
 
     @Test
-    @DisplayName("Тестирование Входа с Неверным Паролем")
+    @DisplayName("Тестирование входа с неверным паролем")
     void loginWithWrongPasswordTest() {
         step("Перейти на страницу студии", () ->
                 authPage.openStudio());
         step("Ввести верные имя пользователя и неверный пароль", () ->
-                authPage.setLoginAndPassword(auth.email(), wrongPassword));
+                authPage.setLoginAndPassword(config.email(), wrongPassword));
         step("Система выдает ошибку Invalid credentials", () ->
                 authPage.checkAlert("Invalid credentials"));
     }
 
 
     @Test
-    @DisplayName("Тестирование Входа с Неверным Именем Пользователя")
+    @DisplayName("Тестирование входа с неверным именем пользователя")
     void loginWithWrongEmailTest() {
         step("Перейти на страницу студии", () ->
                 authPage.openStudio());
         step("Ввести неверный логин пользователя и верный пароль", () ->
-                authPage.setLoginAndPassword(wrongEmail, auth.password()));
+                authPage.setLoginAndPassword(wrongEmail, config.password()));
         step("Система выдает ошибку Email or password is incorrect", () ->
                 authPage.checkAlert("Email or password is incorrect"));
     }
 
     @Test
-    @DisplayName("Тестирование Входа с пустыми полями ввода")
-    void loginWithEmtyFieldsTest() {
+    @DisplayName("тестирование входа с пустыми полями ввода")
+    void loginWithEmptyFieldsTest() {
         step("Перейти на страницу студии", () ->
                 authPage.openStudio());
         step("Ввести неверный логин пользователя и верный пароль", () ->
                 authPage.setLoginAndPassword("", ""));
         step("Система выдает ошибку Необходимо заполнить все поля", () ->
-                authPage.checkerrorHint());
+                authPage.checkErrorHint());
     }
 
     @Test
@@ -81,7 +64,7 @@ public class LoginTests extends TestBase {
         step("Нажать на кнопку восстановления пароля", () ->
                 authPage.forgotPasswordClick());
         step("Ввести емаил зарегистрированного пользователя", () ->
-                authPage.setEmail(auth.email()));
+                authPage.setEmail(config.email()));
         step("Проверить алерт об успешном отправлении емэила на почту", () ->
                 authPage.checkSuccessAlert());
     }
@@ -94,18 +77,10 @@ public class LoginTests extends TestBase {
         step("Нажать на кнопку восстановления пароля", () ->
                 authPage.forgotPasswordClick());
         step("Ввести емаил незарегистрированного пользователя", () ->
-                authPage.setEmail(auth.registrationEmail()));
+                authPage.setEmail(config.registrationEmail()));
         step("Проверить алерт об ошибке", () ->
                 authPage.checkAlert("There is no such user registered in the system"));
     }
-
-
-
-
-
-
-
-
 
 
 }

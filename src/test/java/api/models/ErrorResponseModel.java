@@ -14,5 +14,4 @@ public class ErrorResponseModel {
     private String error;
 
 
-
 }

@@ -8,10 +8,10 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CookiesModel {
     private User user;
-    String  accessToken, email;
+    String accessToken, email;
 
 
-    private  String message, error;
+    private String message, error;
     private int statusCode;
 
     @JsonProperty("AUTH_CRED")

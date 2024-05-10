@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 
 //создание аннотации
-@ExtendWith(LoginExtention.class)
+@ExtendWith(LoginExtension.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 

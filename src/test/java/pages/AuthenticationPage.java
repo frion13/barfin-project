@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import tests.TestBase;
 
 
 import static com.codeborne.selenide.Condition.*;
@@ -9,24 +8,24 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-public class AuthenticationPage extends TestBase {
+public class AuthenticationPage {
 
-    String studioLogin = "https://studio.barfin.network/ru/auth/login";
-    String studioRegister = "https://studio.barfin.network/auth/register";
+    final String studioLogin = "https://studio.barfin.network/ru/auth/login";
 
-    private SelenideElement loginLink = $("#barfin_buttonlink_studio"),
-            emailInput = $("#email"),
-            passwordInput = $("#password"),
-            profileButton = $("#barfin-menubutton-div-user div"),
-            passworRegistrationdInput = $("#password1"),
-            passworConfirmRegistrationdInput = $("#password2"),
-            registrationLink = $("#barfin-link-register"),
-            registrationButton = $("#barfin-button-register"),
-            allertSuccess = $(".alert-success"),
-            alertError = $(".alert-error"),
-            errorHint = $(".error-hint"),
-            forgotPasswordLink = $("#barfin-link-forgot-password"),
-            submitEmailButton = $("#barfin-button-submit-email");
+
+    private final SelenideElement loginLink = $("#barfin_buttonlink_studio");
+    private final SelenideElement emailInput = $("#email");
+    private final SelenideElement passwordInput = $("#password");
+    private final SelenideElement profileButton = $("#barfin-menubutton-div-user div");
+    private final SelenideElement passwordRegistrationInput = $("#password1");
+    private final SelenideElement passwordConfirmRegistrationInput = $("#password2");
+    private final SelenideElement registrationLink = $("#barfin-link-register");
+    private final SelenideElement registrationButton = $("#barfin-button-register");
+    private final SelenideElement allertSuccess = $(".alert-success");
+    private final SelenideElement alertError = $(".alert-error");
+    private final SelenideElement errorHint = $(".error-hint");
+    private final SelenideElement forgotPasswordLink = $("#barfin-link-forgot-password");
+    private final SelenideElement submitEmailButton = $("#barfin-button-submit-email");
 
 
     public AuthenticationPage openPage() {
@@ -39,21 +38,12 @@ public class AuthenticationPage extends TestBase {
         return this;
     }
 
-    public AuthenticationPage openStudioRegister() {
-        open(studioRegister);
-        return this;
-    }
 
     public AuthenticationPage openLoginPage() {
         loginLink.click();
         return this;
     }
 
-    public AuthenticationPage openRegistrationForm() {
-        registrationLink.shouldBe(visible);
-        registrationLink.click();
-        return this;
-    }
 
 
     public AuthenticationPage setLoginAndPassword(String login, String password) {
@@ -63,13 +53,6 @@ public class AuthenticationPage extends TestBase {
         return this;
     }
 
-    public AuthenticationPage setRegistrationLoginAndPasswords(String login, String password, String confirmPassword) {
-        registrationButton.shouldBe(interactable);
-        emailInput.setValue(login);
-        passworRegistrationdInput.setValue(password);
-        passworConfirmRegistrationdInput.setValue(confirmPassword).pressEnter();
-        return this;
-    }
 
 
     public AuthenticationPage forgotPasswordClick() {
@@ -96,10 +79,6 @@ public class AuthenticationPage extends TestBase {
         return this;
     }
 
-    public AuthenticationPage checkSuccessRegistratiom() {
-        assertThat(allertSuccess.getText()).isEqualTo("Registration successful, check your email, confirmation letter has been sent");
-        return this;
-    }
 
     public AuthenticationPage checkAlert(String alertText) {
         alertError.shouldBe(visible);
@@ -107,13 +86,10 @@ public class AuthenticationPage extends TestBase {
         return this;
     }
 
-    public AuthenticationPage checkerrorHint() {
+    public AuthenticationPage checkErrorHint() {
         errorHint.shouldBe(visible);
         return this;
     }
-
-
-
 
 
 }

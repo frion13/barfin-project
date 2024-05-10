@@ -1,25 +1,12 @@
 package tests;
 
 import api.extentions.WithDeleteUser;
-import com.github.javafaker.Faker;
-import config.AuthConfig;
-import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.AuthenticationPage;
 
-import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class RegistrationTests extends TestBase {
-    Faker faker = new Faker();
-    String invalidEmail = faker.internet().domainWord() + "@" + faker.internet().domainWord();
-    String wrongCobfirmPassword = faker.internet().password();
-    AuthenticationPage authPage = new AuthenticationPage();
-    AuthConfig auth = ConfigFactory.create(AuthConfig.class, System.getProperties());
-
     @WithDeleteUser
     @Test
     @DisplayName("Регистрация с валидными данными")
@@ -29,23 +16,23 @@ public class RegistrationTests extends TestBase {
         step("Нажать кнопку 'Войти'", () ->
                 authPage.openLoginPage());
         step("Нажать на кнопку регистрации", () ->
-                authPage.openRegistrationForm());
+                reg.openRegistrationForm());
         step("Ввести верные логин пользователя и пароль", () ->
-                authPage.setRegistrationLoginAndPasswords(auth.registrationEmail(), auth.password(), auth.password())
+                reg.setRegistrationLoginAndPasswords(config.registrationEmail(), config.password(), config.password())
         );
         step("Проверить уведомление об успешной регистрации", () ->
-                authPage.checkSuccessRegistratiom());
+                reg.checkSuccessRegistration());
 
     }
 
 
     @Test
     @DisplayName("Регистрация с некорректным подтверждением пароля")
-    void registrationWithWrongConfitmPasswordTest() {
+    void registrationWithWrongConfirmPasswordTest() {
         step("Открыть страницу регистрации", () ->
-                authPage.openStudioRegister());
+                reg.openPage());
         step("Ввести верные логин пользователя и пароль, ввести неправильно повторный пароль", () ->
-                authPage.setRegistrationLoginAndPasswords(auth.registrationEmail(), auth.password(), wrongCobfirmPassword)
+                reg.setRegistrationLoginAndPasswords(config.registrationEmail(), config.password(), wrongConfirmPassword)
         );
         step("Проверить, что появляется сообщение об ошибке, указывающее на некорректный формат email.",
                 () -> authPage.checkAlert("Passwords do not match"));
@@ -55,21 +42,21 @@ public class RegistrationTests extends TestBase {
     @DisplayName("Регистрация с некорректным форматом email")
     void registrationWithWrongFormatEmailTest() {
         step("Открыть страницу регистрации", () ->
-                authPage.openStudioRegister());
+                reg.openPage());
         step("Ввести email с неправильным форматом, ввести верные пароли", () ->
-                authPage.setRegistrationLoginAndPasswords(invalidEmail, auth.password(), wrongCobfirmPassword)
+                reg.setRegistrationLoginAndPasswords(wrongEmail, config.password(), wrongConfirmPassword)
         );
         step("Проверить, что появляется сообщение об ошибке, указывающее на некорректный формат email.",
-                () -> authPage.checkerrorHint());
+                () -> authPage.checkErrorHint());
     }
 
     @Test
     @DisplayName("Регистрация с уже зарегистрированным email")
     void registrationWithExistUserTest() {
         step("Открыть страницу регистрации", () ->
-                authPage.openStudioRegister());
+                reg.openPage());
         step("Ввести верные логин пользователя и пароль", () ->
-                authPage.setRegistrationLoginAndPasswords(auth.email(), auth.password(), auth.password())
+                reg.setRegistrationLoginAndPasswords(config.email(), config.password(), config.password())
         );
         step("Проверить, что появляется сообщение об ошибке, указывающее на уже существующий email",
                 () -> authPage.checkAlert("Email already in use"));

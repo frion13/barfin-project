@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 
 //создание аннотации
-@ExtendWith(DeleteUserExtention.class)
+@ExtendWith(DeleteUserExtension.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 

@@ -1,40 +1,47 @@
 package api.endpoints;
 
-import api.models.*;
+import io.restassured.response.ValidatableResponse;
 
 import static api.spec.AuthSpec.*;
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class SignIn {
+    private String email;
+    private String password;
+
 
     private static final String ENDPOINT = "/auth/sign-in";
 
-    private <T> T signIn(LoginModel login, String schemaPath, Class<T> responseType) {
+    public SignIn(String email, String password) {
+        this.email = email;
+        this.password = password;
+
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public ValidatableResponse signIn(SignIn signIn) {
         return given(requestSpec)
-                .body(login)
+                .body(signIn)
                 .when()
                 .post(ENDPOINT)
                 .then()
-                .spec(responseSpec)
-                .body(matchesJsonSchemaInClasspath(schemaPath))
-                .extract().as(responseType);
+                .spec(loggingOnlySpec);
     }
 
 
-    private LoginModel createLoginModel(String email, String password) {
-        LoginModel login = new LoginModel();
-        login.setEmail(email);
-        login.setPassword(password);
-        return login;
-    }
-
-
-    public CookiesModel successLogin(String email, String password) {
-        return signIn(createLoginModel(email, password), "schemas/barfin-signin-schema.json", CookiesModel.class);
-    }
-
-    public ErrorResponseModel loginWithError(String email, String password) {
-        return signIn(createLoginModel(email, password), "schemas/barfin-error-schema.json", ErrorResponseModel.class);
-    }
 }
