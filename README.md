@@ -136,7 +136,8 @@ password=password
 
 ### Отчет в Allure TestOps
 
-<img width="1386" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/c058196a-7e23-475d-9ad2-e3ae8e8c998a">
+<img width="1422" alt="image" src="https://github.com/frion13/barfin-project/assets/112623336/0736eaac-cc8f-49ff-858e-f717e9cda07e">
+
 
 
 ### Тесткейсы в Allure TestOps
